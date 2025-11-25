@@ -4,7 +4,7 @@
     </div>
     <div class="container my-4" style="max-width:1400px;width:100%;">
         <div class="row g-4">
-            <div class="col-xl-3 col-12">
+            <div class="col-xl-3 col-md-6 col-12">
                 <div class="p-3 rounded-4 glass">
                     <h5 class="m-0">Current time</h5>
                     <div class="mt-3">
@@ -16,29 +16,29 @@
                                 {{ pad(props.about?.current_time?.getHours() ?? 0) }}:{{ pad(props.about?.current_time?.getMinutes() ?? 0) }}
                             </h1>
                         </div>
-                        <div class="m-0 mt-3 bg-light py-2 px-3 border rounded-4 d-flex gap-2">
+                        <div class="m-0 mt-3 bg-light py-2 px-3 border rounded-4 d-flex align-items-center gap-2">
                             <i class="bi bi-calendar2 text-secondary"></i>
                             Date:
                             <div style="width:1.3rem;height:1.3rem;" v-if="props.about.loading" class="spinner-border ms-auto" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <b class="ms-auto" v-if="!props.about.loading">{{ props.about?.current_time?.toLocaleDateString() || "00" }}</b>
+                            <b class="ms-auto text-end text-break" v-if="!props.about.loading">{{ props.about?.current_time?.toLocaleDateString() || "00" }}</b>
                         </div>
-                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex gap-2">
+                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex align-items-center gap-2">
                             <i class="bi bi-compass text-secondary"></i>
                             Timezone:
                             <div style="width:1.3rem;height:1.3rem;" v-if="props.about.loading" class="spinner-border ms-auto" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <b class="ms-auto" v-if="!props.about.loading">{{ props?.about?.timezone?.id || "Unknown" }}</b>
+                            <b class="ms-auto text-end text-break" v-if="!props.about.loading">{{ props?.about?.timezone?.id || "Unknown" }}</b>
                         </div>
-                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex gap-2">
+                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex align-items-center gap-2">
                             <i class="bi bi-clock-history text-secondary"></i>
                             UTC:
                             <div style="width:1.3rem;height:1.3rem;" v-if="props.about.loading" class="spinner-border ms-auto" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <b class="ms-auto" v-if="!props.about.loading">UTC{{ props?.about?.timezone?.utc || "Unknown" }}</b>
+                            <b class="ms-auto text-end text-break" v-if="!props.about.loading">UTC{{ props?.about?.timezone?.utc || "Unknown" }}</b>
                         </div>
                     </div>
                 </div>
@@ -51,29 +51,29 @@
                             <div style="width:1.3rem;height:1.3rem;" v-if="props.about.loading" class="spinner-border ms-auto" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <b class="ms-auto" v-if="!props.about.loading">{{ props?.about?.ip || "Unknown" }}</b>
+                            <b class="ms-auto text-end text-break" v-if="!props.about.loading">{{ props?.about?.ip || "Unknown" }}</b>
                         </div>
-                        <div v-if="device?.client?.type" class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex gap-2">
+                        <div v-if="device?.client?.type" class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex align-items-center gap-2">
                             <i class="bi bi-laptop text-secondary"></i>
                             Client:
-                            <b class="ms-auto">{{ device?.client?.type || "Unknown" }}</b>
+                            <b class="ms-auto text-end text-break">{{ device?.client?.type || "Unknown" }}</b>
                         </div>
-                        <div v-if="device?.device?.type" class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex gap-2">
+                        <div v-if="device?.device?.type" class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex align-items-center gap-2">
                             <i class="bi bi-pc-display text-secondary"></i>
                             Device:
-                            <b class="ms-auto">{{ device?.device?.type || "Unknown" }}</b>
+                            <b class="ms-auto text-end text-break">{{ device?.device?.type || "Unknown" }}</b>
                         </div>
                         <div v-if="device?.os?.name" class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex align-items-center gap-2">
                             <i class="bi bi-motherboard text-secondary"></i>
                             OS:
-                            <b class="ms-auto text-end">{{ device?.os?.name || "Unknown" }} {{ device?.os?.version || "" }} {{ device?.os?.platform || "" }}</b>
+                            <b class="ms-auto text-end text-break">{{ device?.os?.name || "Unknown" }} {{ device?.os?.version || "" }} {{ device?.os?.platform || "" }}</b>
                         </div>
                     </div>
                     
                 </div>
             </div>
             <div class="col-xl-6 d-xl-block d-none"></div>
-            <div class="col-xl-3 col-12">
+            <div class="col-xl-3 col-md-6 col-12">
                 <div class="p-3 rounded-4 glass">
                     <h5 class="m-0">
                         <div style="width:1.3rem;height:1.3rem;" v-if="props.about.loading" class="spinner-border" role="status">
@@ -85,44 +85,44 @@
                         </span>
                     </h5>
                     <div class="mt-3">
-                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex gap-2">
+                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex align-items-center gap-2">
                             <i class="bi bi-globe-central-south-asia text-secondary"></i>
                             Continent:
                             <div style="width:1.3rem;height:1.3rem;" v-if="props.about.loading" class="spinner-border ms-auto" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <b class="ms-auto" v-if="!props.about.loading">{{ props?.about?.continent || "Unknown" }}</b>
+                            <b class="ms-auto text-end text-break" v-if="!props.about.loading">{{ props?.about?.continent || "Unknown" }}</b>
                         </div>
-                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex gap-2">
+                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex align-items-center gap-2">
                             <i class="bi bi-geo-alt text-secondary"></i>
                             Country:
                             <div style="width:1.3rem;height:1.3rem;" v-if="props.about.loading" class="spinner-border ms-auto" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <b class="ms-auto" v-if="!props.about.loading">{{ props?.about?.country || "Unknown" }}</b>
+                            <b class="ms-auto text-end text-break" v-if="!props.about.loading">{{ props?.about?.country || "Unknown" }}</b>
                         </div>
-                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex gap-2">
+                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex align-items-center gap-2">
                             <i class="bi bi-star text-secondary"></i>
                             Capital:
                             <div style="width:1.3rem;height:1.3rem;" v-if="props.about.loading" class="spinner-border ms-auto" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <b class="ms-auto" v-if="!props.about.loading">{{ props?.about?.capital || "Unknown" }}</b>
+                            <b class="ms-auto text-end text-break" v-if="!props.about.loading">{{ props?.about?.capital || "Unknown" }}</b>
                         </div>
-                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex gap-2">
+                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex align-items-center gap-2">
                             <i class="bi bi-compass text-secondary"></i>
                             Latitude:
                             <div style="width:1.3rem;height:1.3rem;" v-if="props.about.loading" class="spinner-border ms-auto" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <b class="ms-auto" v-if="!props.about.loading">{{ props?.about?.lat || "Unknown" }}</b></div>
-                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex gap-2">
+                            <b class="ms-auto text-end text-break" v-if="!props.about.loading">{{ props?.about?.lat || "Unknown" }}</b></div>
+                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex align-items-center gap-2">
                             <i class="bi bi-compass text-secondary"></i>
                             Longitude: 
                             <div style="width:1.3rem;height:1.3rem;" v-if="props.about.loading" class="spinner-border ms-auto" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <b class="ms-auto" v-if="!props.about.loading">{{ props?.about?.lon || "Unknown" }}</b>
+                            <b class="ms-auto text-end text-break" v-if="!props.about.loading">{{ props?.about?.lon || "Unknown" }}</b>
                         </div>
                     </div>
                     
@@ -136,22 +136,22 @@
                             <div style="width:1.3rem;height:1.3rem;" v-if="props.about.loading" class="spinner-border ms-auto" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <b v-if="!props.about.loading" class="ms-auto text-end">{{ props?.about?.connection?.org || "Unknown" }}</b>
+                            <b v-if="!props.about.loading" class="ms-auto text-end text-break">{{ props?.about?.connection?.org || "Unknown" }}</b>
                         </div>
-                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex gap-2">
+                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex align-items-center gap-2">
                             <i class="bi bi-globe text-secondary"></i>
                             ASN:
                             <div style="width:1.3rem;height:1.3rem;" v-if="props.about.loading" class="spinner-border ms-auto" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <b class="ms-auto" v-if="!props.about.loading">{{ props?.about?.connection?.asn || "Unknown" }}</b></div>
-                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex gap-2">
+                            <b class="ms-auto text-end text-break" v-if="!props.about.loading">{{ props?.about?.connection?.asn || "Unknown" }}</b></div>
+                        <div class="m-0 mt-1 bg-light py-2 px-3 border rounded-4 d-flex align-items-center gap-2">
                             <i class="bi bi-star text-secondary"></i>
                             Domain:
                             <div style="width:1.3rem;height:1.3rem;" v-if="props.about.loading" class="spinner-border ms-auto" role="status">
                                 <span class="visually-hidden">Loading...</span>
                             </div>
-                            <b class="ms-auto" v-if="!props.about.loading">{{ props?.about?.connection?.domain || "Unknown" }}</b>
+                            <b class="ms-auto text-end text-break" v-if="!props.about.loading">{{ props?.about?.connection?.domain || "Unknown" }}</b>
                         </div>
                     </div>
                     

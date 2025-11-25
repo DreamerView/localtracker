@@ -69,7 +69,7 @@
   .globe-wrapper {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
 }
 
 .overlay {
@@ -77,7 +77,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100dvh;
   z-index: 9999;       /* ❤️ ЧТО СПАСАЕТ */
   overflow-y: auto;
 }
